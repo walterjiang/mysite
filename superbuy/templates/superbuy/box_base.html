@@ -1,0 +1,39 @@
+{% extends 'superbuy/cont_base.html' %}
+{% block content_box %}
+<!-- Default box -->
+<div class="box">
+    <div class="box-header with-border">
+        <h3 class="box-title">{% block title %}Title{% endblock %}</h3>
+
+        <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
+                    title="Collapse">
+                <i class="fa fa-minus"></i></button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip"
+                    title="Remove">
+                <i class="fa fa-times"></i></button>
+        </div>
+    </div>
+    <div class="box-body">{% block box_body %}
+        Pace loading works automatically on page. You can still implement it with ajax requests by adding this
+        js:
+        <br/><code>$(document).ajaxStart(function() { Pace.restart(); });</code>
+        <br/>
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <button type="button" class="btn btn-default btn-lrg ajax" title="Ajax Request">
+                    <i class="fa fa-spin fa-refresh"></i>&nbsp; Get External Content
+                </button>
+            </div>
+        </div>
+        <div class="ajax-content">
+        </div>{% endblock %}
+    </div>
+    <!-- /.box-body -->
+    <div class="box-footer">
+        {% block box_foot %}Footer{% endblock %}
+    </div>
+    <!-- /.box-footer-->
+</div>
+<!-- /.box -->
+{% endblock %}
